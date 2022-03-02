@@ -117,11 +117,6 @@ namespace matrix_calc
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             matrixgrid1.RowCount = trackBar1.Value;
