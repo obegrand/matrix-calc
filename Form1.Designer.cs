@@ -50,6 +50,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.matrixgrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrixgrid2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrixresult)).BeginInit();
@@ -160,14 +165,14 @@
             this.matrixresult.AllowUserToDeleteRows = false;
             this.matrixresult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.matrixresult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.matrixresult.Location = new System.Drawing.Point(130, 386);
+            this.matrixresult.Location = new System.Drawing.Point(29, 334);
             this.matrixresult.Name = "matrixresult";
             this.matrixresult.Size = new System.Drawing.Size(353, 223);
             this.matrixresult.TabIndex = 19;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(510, 303);
+            this.button4.Location = new System.Drawing.Point(334, 303);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(87, 23);
             this.button4.TabIndex = 20;
@@ -277,12 +282,51 @@
             this.label12.TabIndex = 32;
             this.label12.Text = "10";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(122, 305);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 33;
+            this.button2.Text = "load";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(427, 303);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 33;
+            this.button5.Text = "load";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
+            this.openFileDialog.InitialDirectory = "C:\\Users\\%user%\\Documents\\";
+            this.openFileDialog.Title = "Открыть матрицу";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(391, 425);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(87, 23);
+            this.button6.TabIndex = 34;
+            this.button6.Text = "save";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(625, 721);
+            this.ClientSize = new System.Drawing.Size(625, 583);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -304,12 +348,14 @@
             this.Controls.Add(this.matrixgrid2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.matrixgrid1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Matrix Calculator (Melnikov A. D.)";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Text = "Калькулятор квадратичных матриц (Melnikov A. D.)";
             this.Load += new System.EventHandler(this.load_Click);
             ((System.ComponentModel.ISupportInitialize)(this.matrixgrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrixgrid2)).EndInit();
@@ -343,6 +389,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Button button6;
     }
 }
 
