@@ -76,9 +76,9 @@
             // 
             this.button1.Location = new System.Drawing.Point(29, 305);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 23);
+            this.button1.Size = new System.Drawing.Size(182, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "random";
+            this.button1.Text = "Заполнить случайными числами";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -165,7 +165,7 @@
             this.matrixresult.AllowUserToDeleteRows = false;
             this.matrixresult.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.matrixresult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.matrixresult.Location = new System.Drawing.Point(29, 334);
+            this.matrixresult.Location = new System.Drawing.Point(136, 332);
             this.matrixresult.Name = "matrixresult";
             this.matrixresult.Size = new System.Drawing.Size(353, 223);
             this.matrixresult.TabIndex = 19;
@@ -174,9 +174,9 @@
             // 
             this.button4.Location = new System.Drawing.Point(334, 303);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(87, 23);
+            this.button4.Size = new System.Drawing.Size(182, 23);
             this.button4.TabIndex = 20;
-            this.button4.Text = "random";
+            this.button4.Text = "Заполнить случайными числами";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -284,21 +284,21 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(122, 305);
+            this.button2.Location = new System.Drawing.Point(217, 305);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 33;
-            this.button2.Text = "load";
+            this.button2.Text = "Загрузить";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(427, 303);
+            this.button5.Location = new System.Drawing.Point(522, 303);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 33;
-            this.button5.Text = "load";
+            this.button5.Text = "Загрузить";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -310,11 +310,11 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(391, 425);
+            this.button6.Location = new System.Drawing.Point(235, 563);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(87, 23);
+            this.button6.Size = new System.Drawing.Size(161, 23);
             this.button6.TabIndex = 34;
-            this.button6.Text = "save";
+            this.button6.Text = "Сохранить";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -323,7 +323,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(625, 583);
+            this.ClientSize = new System.Drawing.Size(625, 623);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
@@ -348,8 +348,8 @@
             this.Controls.Add(this.matrixgrid2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.matrixgrid1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

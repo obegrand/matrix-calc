@@ -13,7 +13,7 @@ namespace matrix_calc
     public partial class Form1 : Form
     {
         Random random = new Random();
-        int matrixwidth = 22 + 4;
+        int matrixwidth = 26;
         int matrixrez = 35;
         int matrixrank = 2;
         int maxrand = 25;
@@ -40,26 +40,87 @@ namespace matrix_calc
 
         private void plus_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < matrixgrid1.RowCount; i++)
+            int colom1 = 0;
+            int row1 = 0;
+            int colom2 = 0;
+            int row2 = 0;
+            for (int i = 0; i < trackBar1.Value; i++)
             {
-                for (int j = 0; j < matrixgrid1.ColumnCount; j++)
+                if (matrixgrid1[i, 1].Value!= null)
                 {
-                    matrixresult.Columns[j].Width = matrixrez;
-                    matrixresult[i, j].Value = Convert.ToInt32(matrixgrid1[i, j].Value) + Convert.ToInt32(matrixgrid2[i, j].Value);
+                    row1++;
+                }
+                if (matrixgrid2[i, 1].Value != null)
+                {
+                    row2++;
+                }
+                if (matrixgrid1[1, i].Value!= null)
+                {
+                    colom1++;
+                }
+                if (matrixgrid2[1, i].Value != null)
+                {
+                    colom2++;
                 }
             }
-
+            //MessageBox.Show(Convert.ToString(row1) + " \t" + Convert.ToString(colom1) + " \t" + Convert.ToString(row2) + " \t" + Convert.ToString(colom2));
+            if (colom1 == colom2 && row1 == row2)
+            {
+                for (int i = 0; i < matrixgrid1.RowCount; i++)
+                {
+                    for (int j = 0; j < matrixgrid1.ColumnCount; j++)
+                    {
+                        matrixresult.Columns[j].Width = matrixrez;
+                        matrixresult[i, j].Value = Convert.ToInt32(matrixgrid1[i, j].Value) + Convert.ToInt32(matrixgrid2[i, j].Value);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Матрицы должны быть одиннакового размера.", "Ошибка");
+            }
         }
 
         private void minus_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < matrixgrid1.RowCount; i++)
+            int colom1 = 0;
+            int row1 = 0;
+            int colom2 = 0;
+            int row2 = 0;
+            for (int i = 0; i < trackBar1.Value; i++)
             {
-                for (int j = 0; j < matrixgrid1.ColumnCount; j++)
+                if (matrixgrid1[i, 1].Value!= null)
                 {
-                    matrixresult.Columns[j].Width = matrixrez;
-                    matrixresult[i, j].Value = Convert.ToInt32(matrixgrid1[i, j].Value) - Convert.ToInt32(matrixgrid2[i, j].Value);
+                    row1++;
                 }
+                if (matrixgrid2[i, 1].Value != null)
+                {
+                    row2++;
+                }
+                if (matrixgrid1[1, i].Value!= null)
+                {
+                    colom1++;
+                }
+                if (matrixgrid2[1, i].Value != null)
+                {
+                    colom2++;
+                }
+            }
+            //MessageBox.Show(Convert.ToString(row1) + " \t" + Convert.ToString(colom1) + " \t" + Convert.ToString(row2) + " \t" + Convert.ToString(colom2));
+            if (colom1 == colom2 && row1 == row2)
+            {
+                for (int i = 0; i < matrixgrid1.RowCount; i++)
+                {
+                    for (int j = 0; j < matrixgrid1.ColumnCount; j++)
+                    {
+                        matrixresult.Columns[j].Width = matrixrez;
+                        matrixresult[i, j].Value = Convert.ToInt32(matrixgrid1[i, j].Value) - Convert.ToInt32(matrixgrid2[i, j].Value);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Матрицы должны быть одиннакового размера.", "Ошибка");
             }
         }
 
@@ -132,8 +193,8 @@ namespace matrix_calc
                 {
                     matrixgrid1.Columns[j].Width = matrixwidth;
                     matrixgrid2.Columns[j].Width = matrixwidth;
-                    matrixgrid1[i, j].Value = random.Next(100);
-                    matrixgrid2[i, j].Value = random.Next(100);
+                    matrixgrid1[i, j].Value = random.Next(25);
+                    matrixgrid2[i, j].Value = random.Next(25);
                     matrixresult.Columns[j].Width = matrixrez;
                 }
             }
@@ -199,7 +260,7 @@ namespace matrix_calc
 
             for (int i = 0; i < fileText.GetLength(0); i++)
             {
-                int[] dataString = fileText[i].Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries).Select(Int32.Parse).ToArray();
+                int[] dataString = fileText[i].Split(new char[] { '\t', ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(Int32.Parse).ToArray();
                 //MessageBox.Show(Convert.ToString(dataString.GetLength(0)), Convert.ToString(fileText.GetLength(0)));
                 for (int j = 0; j < dataString.GetLength(0); j++)
                 {
@@ -219,7 +280,7 @@ namespace matrix_calc
             }
             for (int i = 0; i < fileText.GetLength(0); i++)
             {
-                int[] dataString = fileText[i].Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries).Select(Int32.Parse).ToArray();
+                int[] dataString = fileText[i].Split(new char[] { '\t', ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(Int32.Parse).ToArray();
                 for (int k = 0; k < trackBar1.Value; k++)
                 {
                     for (int m = 0; m < trackBar1.Value; m++)
@@ -244,7 +305,7 @@ namespace matrix_calc
 
             for (int i = 0; i < fileText.GetLength(0); i++)
             {
-                int[] dataString = fileText[i].Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries).Select(Int32.Parse).ToArray();
+                int[] dataString = fileText[i].Split(new char[] { '\t', ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(Int32.Parse).ToArray();
                 //MessageBox.Show(Convert.ToString(dataString.GetLength(0)), Convert.ToString(fileText.GetLength(0)));
                 for (int j = 0; j < dataString.GetLength(0); j++)
                 {
@@ -263,7 +324,7 @@ namespace matrix_calc
             }
             for (int i = 0; i < fileText.GetLength(0); i++)
             {
-                int[] dataString = fileText[i].Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries).Select(Int32.Parse).ToArray();
+                int[] dataString = fileText[i].Split(new char[] { '\t', ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(Int32.Parse).ToArray();
                 for (int k = 0; k < trackBar1.Value; k++){
                     for (int m = 0; m < trackBar1.Value; m++){
                         if (m >= dataString.GetLength(0) || k >= fileText.GetLength(0)) {
